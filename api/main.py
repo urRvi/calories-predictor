@@ -59,19 +59,7 @@ def predict(request: PredictionRequest):
             else:
                  raise HTTPException(status_code=500, detail="Label encoder for Gender not found")
 
-        # Scale features
-        # Ensure columns are in the same order as during training
-        # The scaler expects the exact same number of features in the same order
-        # We need to know the feature names/order from training.
-        # Since we don't have that explicitly saved, we assume the order:
-        # [Gender, Age, Height, Weight, Duration, Heart_Rate, Body_Temp]
-        # (based on typical dataframe column order after drop User_ID)
-        
-        # Let's verify the order by looking at the training script or data.
-        # In train.py: df.drop('User_ID', axis=1) -> 'Gender' is first if it was after User_ID?
-        # User_ID is usually first.
-        # Columns in csv: User_ID, Gender, Age, Height, Weight, Duration, Heart_Rate, Body_Temp, Calories
-        # After drop User_ID and Calories: Gender, Age, Height, Weight, Duration, Heart_Rate, Body_Temp
+        # Scale features        
         
         features = ['Gender', 'Age', 'Height', 'Weight', 'Duration', 'Heart_Rate', 'Body_Temp']
         df = df[features]

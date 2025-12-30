@@ -17,7 +17,7 @@ torch.manual_seed(42)
 
 def load_and_preprocess_data():
     print("Loading data...")
-    df = pd.read_csv('data/calories.csv')
+    df = pd.read_csv('../data/calories.csv')
     
     # Drop User_ID as it's not a feature
     if 'User_ID' in df.columns:
