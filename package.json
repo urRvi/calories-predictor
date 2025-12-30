@@ -1,0 +1,18 @@
+{
+  "name": "calorie-predictor",
+  "version": "1.0.0",
+  "description": "Advanced Machine Learning Calorie Prediction with FastAPI and Vue",
+  "scripts": {
+    "server": "python api/main.py",
+    "dev": "python api/main.py && start frontend/index.html",
+    "frontend": "start frontend/index.html",
+    "start": "start python api/main.py && start frontend/index.html"
+  },
+  "keywords": [
+    "machine-learning",
+    "calories",
+    "prediction"
+  ],
+  "author": "",
+  "license": "ISC"
+}
